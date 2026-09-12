@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advocacia & Consultoria Jurídica Especializada</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- ================================================================= -->
+    <!-- GOOGLE ANALYTICS (GA4) - SUBSTITYA 'GA_TRACKING_ID' PELO SEU ID  -->
+    <!-- ================================================================= -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_TRACKING_ID"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      // Configuração base do GA4
+      gtag('config', 'GA_TRACKING_ID');
+
+      // Função para disparar eventos de conversão no GA4
+      function trackGAEvent(eventName, category, label) {
+          if (typeof gtag === 'function') {
+              gtag('event', eventName, {
+                  'event_category': category,
+                  'event_label': label
+              });
+          }
+      }
+    </script>
+    <!-- ================================================================= -->
+
+    <style>
+        /* Estilos Gerais */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: #333;
+            line-height: 1.6;
+            background-color: #f8f9fa;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Merriweather', serif;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header / Navbar */
+        .header {
+            background-color: #0f2027;
+            color: #fff;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        .logo span {
+            font-size: 0.8rem;
+            color: #c5a059;
+            display: inline-block;
+            margin-left: 5px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #c5a059;
+        }
+
+        .btn-nav {
+            border: 1px solid #c5a059;
+            padding: 8px 15px;
+            border-radius: 4px;
+            color: #c5a059 !important;
+        }
+
+        .btn-nav:hover {
+            background-color: #c5a059;
+            color: #fff !important;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(15, 32, 39, 0.88), rgba(15, 32, 39, 0.88)), url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+            color: #fff;
+            padding: 120px 0 90px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #fff;
+            line-height: 1.3;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 650px;
+            margin: 0 auto 35px;
+            color: #ddd;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        /* Botões */
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            transition: 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .btn-primary {
+            background-color: #c5a059;
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background-color: #a3813c;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: #fff;
+            border: 1px solid #fff;
+        }
+
+        .btn-secondary:hover {
+            background-color: #fff;
+            color: #0f2027;
+        }
+
+        .btn-block {
+            width: 100%;
+        }
+
+        /* Seções */
+        .services, .about, .contact {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 45px;
+            color: #0f2027;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background-color: #c5a059;
+            margin: 10px auto 0;
+        }
+
+        /* Cards de Atuação */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background-color: #fff;
+            padding: 35px 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-top: 4px solid #c5a059;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h3 {
+            margin-bottom: 15px;
+            color: #0f2027;
+            font-size: 1.3rem;
+        }
+
+        .card p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        /* Sobre */
+        .about-content {
+            background: #fff;
+            padding: 50px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-left: 5px solid #0f2027;
+        }
+
+        .about-text h2 {
+            color: #0f2027;
+            margin-bottom: 15px;
+        }
+
+        .about-text p {
+            color: #555;
+            font-size: 1.05rem;
+        }
+
+        /* Formulário de Contato */
+        .contact {
+            background-color: #eef2f5;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: 0.95rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: #c5a059;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0f2027;
+            color: #aaa;
+            text-align: center;
+            padding: 30px 0;
+            font-size: 0.85rem;
+        }
+
+        footer p {
+            margin-bottom: 5px;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav a {
+                margin: 0 8px;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .about-content {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <header class="header">
+        <div class="container nav-container">
+            <div class="logo">Dr. Nome do Advogado <span>| OAB/UF 00.000</span></div>
+            <nav>
+                <a href="#inicio">Início</a>
+                <a href="#atuacao">Áreas de Atuação</a>
+                <a href="#sobre">Sobre</a>
+                <a href="#contato" class="btn-nav">Fale Conosco</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="container hero-content">
+            <h1>Defendendo Seus Direitos com Excelência e Agilidade</h1>
+            <p>Soluções jurídicas personalizadas em Direito Civil, Trabalhista e Familiar. Agende sua consulta técnica agora mesmo.</p>
+            
+            <div class="hero-buttons">
+                <!-- Clique Rastreável no WhatsApp -->
+                <a href="https://wa.me/5500000000000?text=Olá,%20gostaria%20de%20agendar%20uma%20consulta" 
+                   target="_blank" 
+                   class="btn btn-primary"
+                   onclick="trackGAEvent('click_whatsapp', 'Contato', 'Botao Hero WhatsApp')">
+                   Falar no WhatsApp
+                </a>
+                
+                <a href="#contato" class="btn btn-secondary">Enviar Mensagem</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Áreas de Atuação -->
+    <section id="atuacao" class="services">
+        <div class="container">
+            <h2 class="section-title">Áreas de Atuação</h2>
+            <div class="cards-grid">
+                <div class="card">
+                    <h3>Direito de Família</h3>
+                    <p>Divórcios, guarda de filhos, pensão alimentícia, inventários e partilha de bens.</p>
+                </div>
+                <div class="card">
+                    <h3>Direito do Trabalho</h3>
+                    <p>Defesa dos direitos dos trabalhadores e assessoria jurídica preventiva para empresas.</p>
+                </div>
+                <div class="card">
+                    <h3>Direito Civil & Contratos</h3>
+                    <p>Elaboração e revisão de contratos, renegociação de dívidas, indenizações e cobranças judiciais.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Sobre -->
+    <section id="sobre" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Compromisso, Ética e Eficiência</h2>
+                    <p>Com vasta experiência na advocacia, atuamos na proteção dos seus interesses com máxima transparência, rigor técnico e acompanhamento humanizado em todas as etapas do processo judicial ou extrajudicial.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Contato (Formulário Rastreável) -->
+    <section id="contato" class="contact">
+        <div class="container">
+            <h2 class="section-title">Agende sua Consulta</h2>
+            <form id="contactForm" class="contact-form" onsubmit="handleFormSubmit(event)">
+                <div class="form-group">
+                    <input type="text" id="name" placeholder="Seu Nome Completo" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" placeholder="Seu E-mail" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" id="phone" placeholder="Seu Telefone/WhatsApp" required>
+                </div>
+                <div class="form-group">
+                    <textarea id="message" rows="4" placeholder="Descreva brevemente o seu caso" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Enviar Solicitação</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; 2026 Dr. Nome do Advogado. Todos os direitos reservados.</p>
+            <p>Aviso: O conteúdo deste site é estritamente informativo e atende ao Código de Ética da OAB.</p>
+        </div>
+    </footer>
+
+    <!-- Script de formulário + Integração de evento GA4 -->
+    <script>
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            
+            // Dispara evento de conversão (Lead) para o Google Analytics 4
+            trackGAEvent('generate_lead', 'Formulario', 'Envio de Contato Landing Page');
+
+            alert('Obrigado! Sua mensagem foi enviada com sucesso. Entraremos em contato em breve.');
+            document.getElementById('contactForm').reset();
+        }
+    </script>
+</body>
+</html>
